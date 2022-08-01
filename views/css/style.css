@@ -1,14 +1,12 @@
 <style>
 body{
-    background-color: green;
+    background-color: rgb(11, 175, 11);
 }
 
 .textArea{
     background-color: white;
-    color: green;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10%;
+    color: rgb(11, 175, 11);
+    margin: auto;
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 5%;
@@ -17,17 +15,20 @@ body{
 }
 
 .button{
-    background-color: green; color: white;
-    width: 30%; margin-left: 10%;
+    background-color: rgb(11, 175, 11); color: white;
+    margin:auto;
+    font-size:larger;
 }
 
 .addressForm{
-    margin-left: 40%;
+    margin: auto;
+    font-size: larger;
 }
 
 .buttonForm{
-    background-color: green; color: white;
-    width: 30%; margin-left: 34%;
+    background-color: rgb(11, 175, 11); color: white;
+    margin:auto;
+    font-size: larger;
 }
 
 </style>
