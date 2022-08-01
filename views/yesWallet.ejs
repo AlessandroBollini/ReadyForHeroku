@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- myCss.style %>
+        <title>Use your Wallet</title>
+</head>
+
+<body>
+    <div class="textArea">
+        <h1>Insert in this form your wallet Address</h1>
+        <form action="/<%=address%>/transfer" method="POST">
+            <div>
+                <input class="addressForm" type="text" class="form-control" placeholder="address" name="userAddress">
+            </div>
+            <br>
+            <br>
+            <button class="buttonForm" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

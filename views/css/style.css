@@ -1,0 +1,33 @@
+<style>
+body{
+    background-color: green;
+}
+
+.textArea{
+    background-color: white;
+    color: green;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 7%;
+}
+
+.button{
+    background-color: green; color: white;
+    width: 30%; margin-left: 10%;
+}
+
+.addressForm{
+    margin-left: 40%;
+}
+
+.buttonForm{
+    background-color: green; color: white;
+    width: 30%; margin-left: 34%;
+}
+
+</style>

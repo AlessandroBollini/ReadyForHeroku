@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- myCss.style %>
+        <title>NFT</title>
+</head>
+
+<body>
+    <div class="textArea">
+        <h1>Welcome to the future</h1>
+        <h3>In order to receive your NFT you have to store it on a wallet.</h3>
+        <h3>Don't worry: if you don't have one we provided creating a brand new wallet for you</h3>
+        <br>
+        <button class="button" onclick="window.location.href='/<%=address%>/transfer';">I want to use my Wallet</button>
+        <button class="button" onclick="window.location.href='/<%=address%>/credentials';">I want to use Sisal
+            Wallet</button>
+    </div>
+</body>
+
+</html>
