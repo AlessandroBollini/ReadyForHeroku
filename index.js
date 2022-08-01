@@ -9,6 +9,7 @@ app.set('view engine', 'ejs');
 const myCss = {
     style: fs.readFileSync('./views/css/style.css', 'utf8')
 };
+const port = process.env.PORT || 3000
 
 async function main() {
     let moduleSent = new Map();
@@ -50,6 +51,6 @@ async function main() {
 
 main();
 
-app.listen(3000, () => {
-    console.log("App is listening on port 3000");
+app.listen(port, () => {
+    console.log("App is listening on port");
 })
