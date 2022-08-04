@@ -19,29 +19,9 @@
     </div>
     <div class="textArea">
         <h1>Here you find your nft image, to download click the button below</h1>
-        <button class="button" onclick="download()">Here</button>
+        <button class="button" onclick="">Here</button>
     </div>
-    <script src=
-    "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js">
-    </script>
-    <script>
-        function download(){
-          axios({
-              url: <%=image%>,
-              method:'GET',
-              responseType: 'blob'
-      })
-      .then((response) => {
-             const url = window.URL
-             .createObjectURL(new Blob([response.data]));
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.setAttribute('download', 'image.jpg');
-                    document.body.appendChild(link);
-                    link.click();
-      })
-      }
-    </script>
+
     <br>
     <img class="image" alt=”Image” src="<%=image%>" style="width:-webkit-fill-available">
     <br>
