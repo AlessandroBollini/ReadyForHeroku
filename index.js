@@ -17,8 +17,9 @@ async function main() {
     list.forEach(wallet => {
         addressesToSend.set(wallet.address, 'none');
 
-        app.get('/' + wallet.address, (_req, res) => {
-            res.render("landingPage", { address: wallet.address, myCss: myCss });
+        app.get('/' + wallet.address,async (_req, res) => {
+            await db.isUsed(wallet.address);
+            res.render("landingPage", { address: wallet.address, myCss: myCss,image:wallet.image });
         })
 
         app.get('/' + wallet.address + '/transfer', (_req, res) => {
@@ -31,7 +32,6 @@ async function main() {
         })
 
         app.get('/' + wallet.address + '/transferConfirmed', (_req, res) => {
-            db.isReceived(wallet.address);
             webhook.sendAddress(wallet.address, addressesToSend.get(wallet.address));
             res.render("confirm", { address: addressesToSend.get(wallet.address), wallet: wallet, myCss: myCss });
         })

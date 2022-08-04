@@ -1,6 +1,6 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('da8492uranh4q2', 'fyreswaoebehjd', '8075ca1a83790a047f673e374117fc915f19ced4c418974cb1e35d2742b77b01', {
-    host: 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
+const sequelize = new Sequelize('d5ji12bvim4l88', 'hhevbrrwvawqxx', 'b04b1515b59f8efb0f83a908fd337fd028f315aad2fab8c2a8acd23176ae75ec', {
+    host: 'ec2-34-253-119-24.eu-west-1.compute.amazonaws.com',
     dialect: 'postgres',
     dialectOptions: {
         ssl: {
@@ -31,8 +31,8 @@ Wallet.init({
     },
     privateKey: DataTypes.STRING,
     seedPhrase: DataTypes.STRING,
-    received: DataTypes.BOOLEAN,
-    used:DataTypes.BOOLEAN
+    used:DataTypes.BOOLEAN,
+    image:DataTypes.STRING
 }, {
     timestamps: false,
     sequelize

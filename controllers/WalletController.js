@@ -2,7 +2,7 @@ const db = require('../models/walletModel');
 
 exports.findWallets = async () => {
     let walletsList = [];
-    await db.Wallet.findAll()
+    await db.Wallet.findAll({where:{used:false}})
         .then((data) => {
             data.forEach(element => {
                 const wallet = {
@@ -10,8 +10,8 @@ exports.findWallets = async () => {
                     publicKey: element.publicKey,
                     privateKey: element.privateKey,
                     seedPhrase: element.seedPhrase,
-                    received: element.received,
-                    used:element.used
+                    used:element.used,
+                    image:element.image
                 }
                 walletsList.push(wallet);
             });
@@ -23,24 +23,12 @@ exports.findWallets = async () => {
     return walletsList;
 }
 
-exports.isReceived = async (address) => {
-    await db.Wallet.update({ received: true }, { where: { address: address } })
-        .then(() => {
-            console.log("Updated");
-        })
-        .catch(err => {
-            console.error(err);
-        })
-}
-
-exports.checkReceived = async (address) => {
-    let rec = false;
-    await db.Wallet.findByPk(address)
-        .then(data => {
-            rec = data.received
-        })
-        .catch(err => {
-            console.error(err);
-        })
-    return rec;
+exports.isUsed=async(address)=>{
+    await db.Wallet.update({used:true},{where:{address:address}})
+    .then(()=>{
+        console.log("");
+    })
+    .catch((err)=>{
+        console.error(err);
+    })
 }
