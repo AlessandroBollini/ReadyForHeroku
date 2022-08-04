@@ -12,11 +12,9 @@ const myCss = {
 const port = process.env.PORT || 3000
 
 async function main() {
-    let moduleSent = new Map();
     let addressesToSend = new Map();
     const list = await db.findWallets();
     list.forEach(wallet => {
-        moduleSent.set(wallet.address, false);
         addressesToSend.set(wallet.address, 'none');
 
         app.get('/' + wallet.address, (_req, res) => {
@@ -24,11 +22,7 @@ async function main() {
         })
 
         app.get('/' + wallet.address + '/transfer', (_req, res) => {
-            if (!moduleSent.get(wallet.address)) {
-                res.render("yesWallet", { address: wallet.address, myCss: myCss });
-            } else {
-                res.render("addressSent", { myCss: myCss });
-            }
+                res.render("yesWallet", { address: wallet.address, myCss: myCss });            
         })
 
         app.post('/' + wallet.address + '/transfer', encodeUrl, (req, res) => {
@@ -38,7 +32,6 @@ async function main() {
 
         app.get('/' + wallet.address + '/transferConfirmed', (_req, res) => {
             db.isReceived(wallet.address);
-            moduleSent.set(wallet.address, true);
             webhook.sendAddress(wallet.address, addressesToSend.get(wallet.address));
             res.render("confirm", { address: addressesToSend.get(wallet.address), wallet: wallet, myCss: myCss });
         })
