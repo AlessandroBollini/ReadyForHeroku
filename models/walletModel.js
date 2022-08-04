@@ -18,7 +18,7 @@ sequelize
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
-
+  
 class Wallet extends Model { }
 Wallet.init({
     address: {
