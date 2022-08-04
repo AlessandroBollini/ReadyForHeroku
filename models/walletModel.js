@@ -1,6 +1,6 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('deom1eaebca2ao', 'btdwzylnjfbpei', 'ad8ef5f7085442f729d7e8809c6f29586b1ac9bc631b95600941ff3aaeccecdc', {
-    host: 'ec2-52-212-228-71.eu-west-1.compute.amazonaws.com',
+const sequelize = new Sequelize('da8492uranh4q2', 'fyreswaoebehjd', '8075ca1a83790a047f673e374117fc915f19ced4c418974cb1e35d2742b77b01', {
+    host: 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
     dialect: 'postgres',
     dialectOptions: {
         ssl: {

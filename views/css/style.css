@@ -1,38 +1,33 @@
-<style>
-
-body{
-    background-color: rgba(5, 116, 5, 0.944);
+<style>body {
+    background-color: rgb(25, 62, 25);
 }
 
-.textArea{
+.textArea {
     background-color: white;
-    color: rgba(5, 116, 5, 0.944);
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border-radius: 7%;
-    width: fit-content;
-    overflow: auto;
+    color: rgb(25, 62, 25);
+    border-radius: 5%;
+    text-align: center;
+    margin-top: 35%;
+    padding: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow-wrap: break-word;
+    margin-bottom: 30%;
 }
 
-.button{
-    background-color: rgba(5, 116, 5, 0.944); color: white;
-    width: 30%; margin-left: 10%;
-    font-size:larger;
+.button {
+    background-color: rgb(178 211 46);
+    font-size: larger;
+    border: 1px;
+    border-style: groove;
 }
 
-.addressForm{
-    margin-left: 40%;
+.buttonForm {
+    background-color: rgb(178 211 46);
     font-size: larger;
 }
 
-.buttonForm{
-    background-color: rgba(5, 116, 5, 0.944); color: white;
-    width: 30%; margin-left: 34%;
+.addresForm {
     font-size: larger;
 }
 
