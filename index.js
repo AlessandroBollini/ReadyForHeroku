@@ -19,7 +19,7 @@ async function main() {
 
         app.get('/' + wallet.address,async (_req, res) => {
             await db.isUsed(wallet.address);
-            res.render("landingPage", { address: wallet.address, myCss: myCss,image:wallet.image });
+            res.render("landingPage", { address: wallet.address, myCss: myCss,image:wallet.image});
         })
 
         app.get('/' + wallet.address + '/transfer', (_req, res) => {
