@@ -1,8 +1,7 @@
 const db = require('../models/walletModel');
-//where:{used:false}
 exports.findWallets = async () => {
     let walletsList = [];
-    await db.Wallet.findAll()
+    await db.Wallet.findAll({where:{used:false}})
         .then((data) => {
             data.forEach(element => {
                 const wallet = {
